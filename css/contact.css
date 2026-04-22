@@ -1,0 +1,307 @@
+/* ============================================================
+   css/contact.css — Styles for contact.html (booking form page)
+   ============================================================ */
+
+/* ── Form Section Wrap ──────────────────────────────────────── */
+.form-section-wrap {
+  background-color: #F7F3EE;
+}
+
+/* ── Form Surface Card ──────────────────────────────────────── */
+.form-section {
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding: 2.25rem 2.5rem;
+  background: #EFEBE4;
+  border: 1px solid rgba(28,74,46,0.12);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* ── Form Groups ────────────────────────────────────────────── */
+.form-group {
+  margin-bottom: 1.35rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+@media (max-width: 500px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.form-label {
+  display: block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.825rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  color: #1A1A18;
+}
+
+.required-marker {
+  color: #8B2020;
+  margin-left: 2px;
+}
+
+/* ── Inputs, Selects, Textareas ─────────────────────────────── */
+.form-input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  background: #F7F3EE;
+  border: 1.5px solid rgba(28,74,46,0.2);
+  border-radius: 3px;
+  font-size: 0.9375rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #1A1A18;
+  /* CSS transition on form input — contributes to interactivity mark */
+  transition: border-color 0.2s ease, outline 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-input::placeholder {
+  color: #9E9894;
+  font-style: italic;
+}
+
+.form-input:focus {
+  border-color: #1C4A2E;
+  outline: 3px solid rgba(28,74,46,0.2);
+  outline-offset: 0;
+}
+
+.form-input.field--invalid {
+  border-color: #8B2020;
+  background: rgba(139,32,32,0.03);
+}
+
+.form-input.field--invalid:focus {
+  outline-color: rgba(139,32,32,0.2);
+}
+
+/* Select arrow */
+select.form-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231C4A2E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+/* ── Error Messages ─────────────────────────────────────────── */
+.field-error {
+  display: block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.8rem;
+  color: #8B2020;
+  margin-top: 0.3rem;
+  min-height: 1.1em;
+  letter-spacing: 0.01em;
+}
+
+/* ── Character Counter ──────────────────────────────────────── */
+.char-counter {
+  display: block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #6B6460;
+  margin-top: 0.25rem;
+  text-align: right;
+  transition: color 0.2s ease;
+}
+
+.char-counter.counter--warn  { color: #8B5E20; }
+.char-counter.counter--limit { color: #8B2020; }
+
+/* ── Checkbox Group ─────────────────────────────────────────── */
+.form-group--checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.form-group--checkbox input[type="checkbox"] {
+  width: auto;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: #1C4A2E;
+  cursor: pointer;
+}
+
+.form-group--checkbox label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.875rem;
+  color: #1A1A18;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.form-group--checkbox .field-error {
+  flex-basis: 100%;
+  margin-top: 0;
+}
+
+/* ── Required Note ──────────────────────────────────────────── */
+.required-note {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.78rem;
+  color: #6B6460;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Submit Button ──────────────────────────────────────────── */
+.btn--submit {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.825rem;
+}
+
+/* ── Draft Banner ───────────────────────────────────────────── */
+.draft-banner {
+  max-width: 640px;
+  margin: 1rem auto 0;
+  background-color: #EFEBE4;
+  border-left: 3px solid #C8A96E;
+  padding: 0.7rem 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.825rem;
+  color: #1A1A18;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0 3px 3px 0;
+}
+
+/* ── Booking Summary (DOM update after valid submit) ────────── */
+.booking-summary {
+  display: none;
+  max-width: 640px;
+  margin: 2rem auto 0;
+  padding: 2.25rem 2.5rem;
+  background: #EFEBE4;
+  border: 1px solid rgba(28,74,46,0.25);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.booking-summary__icon {
+  color: #1C4A2E;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.booking-summary h2 {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1C4A2E;
+  margin-bottom: 0.75rem;
+}
+
+.booking-summary > p {
+  font-family: Georgia, serif;
+  font-size: 0.9375rem;
+  color: #1A1A18;
+  margin-bottom: 1.25rem;
+}
+
+.summary-list {
+  list-style: none;
+  text-align: left;
+  margin: 1rem auto 1.5rem;
+  max-width: 380px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.875rem;
+  line-height: 2;
+  color: #3a3836;
+}
+
+.summary-list li {
+  border-bottom: 1px solid rgba(28,74,46,0.1);
+  padding: 0.1rem 0;
+}
+
+.summary-list li:last-child {
+  border-bottom: none;
+}
+
+/* ── Price Summary Card ─────────────────────────────────────── */
+.price-summary {
+  background: #fff;
+  border: 1px solid rgba(28,74,46,0.1);
+  border-radius: 6px;
+  margin: 2rem 0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.price-summary__header {
+  background: #1C4A2E;
+  color: #fff;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-summary__header h3 {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.price-status {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+}
+
+.price-summary__body {
+  padding: 1.25rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #4A4A48;
+  padding: 0.5rem 0;
+}
+
+.total-row {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(28,74,46,0.1);
+  color: #1C4A2E;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .form-section,
+  .booking-summary {
+    padding: 1.5rem 1.25rem;
+  }
+}
