@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinations — UK Escapes</title>
+  <meta name="description" content="Explore UK Escapes' four featured destinations: Edinburgh, London, the Lake District, and Bath. Click the interactive map or browse destination cards.">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/destinations.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="site-header__logo" href="index.html">UK Escapes</a>
+    <div class="site-header__datetime" id="datetime-display" aria-live="polite"></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul class="site-nav__list" role="list">
+        <li><a class="site-nav__link" href="index.html">Home</a></li>
+        <li><a class="site-nav__link nav--active" href="destinations.html" aria-current="page">Destinations</a></li>
+        <li><a class="site-nav__link" href="info.html">Explore</a></li>
+        <li><a class="site-nav__link" href="contact.html">Book a Trip</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-content">
+
+    <!-- Page Banner -->
+    <section class="page-banner" aria-label="Page banner">
+      <div class="page-banner__overlay"></div>
+      <div class="page-banner__content">
+        <p class="hero__eyebrow">Four Iconic Places</p>
+        <h1 class="page-banner__heading">Destinations</h1>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="breadcrumbs__inner anim-scroll">
+        <a href="index.html" class="breadcrumbs__link">Home</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__current">Destinations</span>
+      </div>
+    </nav>
+
+    <!-- Returning user banner -->
+    <div class="returning-banner" id="returning-banner" style="display:none;" role="status" aria-live="polite">
+      <div class="banner-inner" id="returning-banner-inner"></div>
+    </div>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section content-section" aria-labelledby="map-heading">
+      <div class="content-section__inner">
+        <p class="section-eyebrow anim-scroll">Interactive</p>
+        <h2 class="section-heading anim-scroll" id="map-heading">Click the Map</h2>
+        <p class="section-intro anim-scroll">Click a highlighted region to jump to its destination card below.</p>
+
+        <div class="map-container-wrap anim-scroll">
+          <div class="map-controls">
+            <button id="map-zoom-in" class="map-zoom-btn" aria-label="Zoom in" title="Zoom In">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </button>
+            <button id="map-zoom-out" class="map-zoom-btn" aria-label="Zoom out" title="Zoom Out">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </button>
+          </div>
+          <div class="map-wrapper" style="overflow: hidden; border-radius: 4px;">
+          <img src="images/map-uk.jpg"
+               usemap="#uk-map"
+               alt="Map of the United Kingdom with clickable destination regions: Edinburgh, Lake District, London, and Bath"
+               class="map-image"
+               id="map-image">
+
+          <map name="uk-map">
+            <area shape="circle" coords="221,195,15"
+                  href="info.html" alt="Edinburgh, Scotland"
+                  title="Edinburgh" data-dest="edinburgh" data-card="card-edinburgh" class="map-area">
+            <area shape="circle" coords="225,244,15"
+                  href="info.html" alt="Lake District, England"
+                  title="Lake District" data-dest="lake-district" data-card="card-lake-district" class="map-area">
+            <area shape="circle" coords="289,350,15"
+                  href="info.html" alt="London, England"
+                  title="London" data-dest="london" data-card="card-london" class="map-area">
+            <area shape="circle" coords="240,355,15"
+                  href="info.html" alt="Bath, England"
+                  title="Bath" data-dest="bath" data-card="card-bath" class="map-area">
+          </map>
+
+          <!-- Tooltip shown on hover -->
+          <div class="map-tooltip" id="map-tooltip" role="tooltip" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destination Cards Section -->
+    <section class="destinations-section content-section" aria-labelledby="dest-heading">
+      <div class="content-section__inner">
+        <p class="section-eyebrow anim-scroll">Our Selection</p>
+        <div class="dest-header-flex anim-scroll">
+          <h2 class="section-heading" id="dest-heading" style="margin-bottom:0;">Featured Destinations</h2>
+          <div class="dest-search">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="dest-search-input" class="dest-search-input" placeholder="Search places..." aria-label="Search destinations">
+          </div>
+        </div>
+
+        <div class="dest-grid">
+
+          <article class="dest-card anim-scroll" id="card-edinburgh">
+            <div class="dest-card__img-wrap">
+              <img class="dest-card__img" src="images/dest-edinburgh.jpg" alt="Edinburgh Castle perched on volcanic Castle Rock, Scotland">
+            </div>
+            <div class="dest-card__body">
+              <h3 class="dest-card__title">Edinburgh</h3>
+              <p class="dest-card__desc">Scotland's ancient capital sits atop volcanic rock, crowned by a dramatic castle and alive with festivals, medieval closes, and world-class whisky.</p>
+              <a class="btn dest-card__btn" href="info.html" data-dest="edinburgh">Explore Edinburgh</a>
+            </div>
+          </article>
+
+          <article class="dest-card anim-scroll" id="card-london">
+            <div class="dest-card__img-wrap">
+              <img class="dest-card__img" src="images/ld.png" alt="Tower Bridge illuminated over the River Thames at dusk, London">
+            </div>
+            <div class="dest-card__body">
+              <h3 class="dest-card__title">London</h3>
+              <p class="dest-card__desc">An inexhaustible world city — from Tower Bridge to Tate Modern, Soho's restaurants to Hyde Park's acres of green, no two visits are ever quite the same.</p>
+              <a class="btn dest-card__btn" href="info.html" data-dest="london">Explore London</a>
+            </div>
+          </article>
+
+          <article class="dest-card anim-scroll" id="card-lake-district">
+            <div class="dest-card__img-wrap">
+              <img class="dest-card__img" src="images/lake.jpg" alt="Serene lake and rolling green hills in the Lake District National Park, England">
+            </div>
+            <div class="dest-card__body">
+              <h3 class="dest-card__title">Lake District</h3>
+              <p class="dest-card__desc">England's largest national park is a landscape of shimmering lakes, wooded fells, and stone villages that inspired Wordsworth and Beatrix Potter alike.</p>
+              <a class="btn dest-card__btn" href="info.html" data-dest="lake-district">Explore Lake District</a>
+            </div>
+          </article>
+
+          <article class="dest-card anim-scroll" id="card-bath">
+            <div class="dest-card__img-wrap">
+              <img class="dest-card__img" src="images/bath.jpeg" alt="The Roman Baths with steaming thermal waters and Georgian architecture, Bath, England">
+            </div>
+            <div class="dest-card__body">
+              <h3 class="dest-card__title">Bath</h3>
+              <p class="dest-card__desc">A UNESCO World Heritage city where Roman thermal baths meet Georgian crescents, Jane Austen heritage, and a thriving independent food scene.</p>
+              <a class="btn dest-card__btn" href="info.html" data-dest="bath">Explore Bath</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- No results message -->
+        <div id="no-results-message" class="no-results-message anim-scroll" style="display: none;">
+          <div class="no-results-content">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="no-results-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            <h3>No results found</h3>
+            <p>We couldn't find any destinations matching your search. Try a different location or keyword.</p>
+            <button id="clear-search-btn" class="btn btn--secondary btn--sm">Clear Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Destination Cards -->
+    <div class="dest-modal-overlay" id="dest-modal" aria-hidden="true" style="display: none; align-items: center; justify-content: center;">
+      <div class="dest-modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="dest-modal-close" aria-label="Close modal">&times;</button>
+        <div class="dest-modal-body">
+          <img class="dest-modal-img" id="modal-img" src="" alt="">
+          <div class="dest-modal-text">
+            <h3 class="dest-modal-title" id="modal-title"></h3>
+            <p class="dest-modal-desc" id="modal-desc"></p>
+            <a class="btn" id="modal-btn" href="info.html">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+      <div class="content-section__inner">
+        <p class="section-eyebrow anim-scroll" style="text-align: center;">Commitment</p>
+        <h2 class="section-heading anim-scroll" style="text-align: center;">Why UK Escapes?</h2>
+        <div class="why-us__grid">
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Expertly Curated</h3>
+            <p class="why-us-item__body">Every destination is hand-picked by our local experts to ensure an authentic British experience.</p>
+          </div>
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Premium Support</h3>
+            <p class="why-us-item__body">From booking to your return home, our dedicated team is available 24/7 to assist you.</p>
+          </div>
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Verified Quality</h3>
+            <p class="why-us-item__body">We partner directly with local providers to ensure the highest standards of safety and comfort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 UK Escapes &nbsp;|&nbsp;
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="info.html">Explore</a>
+      <a href="contact.html">Book a Trip</a>
+    </p>
+  </footer>
+
+  <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-progress"></div></div>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/destinations.js"></script>
+
+</body>
+</html>
