@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Edinburgh — UK Escapes</title>
+  <meta name="description" content="Discover Edinburgh fact by fact. Click to reveal the history, festivals, transport links, and best times to visit Scotland's remarkable capital city.">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/info.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="site-header__logo" href="index.html">UK Escapes</a>
+    <div class="site-header__datetime" id="datetime-display" aria-live="polite"></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul class="site-nav__list" role="list">
+        <li><a class="site-nav__link" href="index.html">Home</a></li>
+        <li><a class="site-nav__link" href="destinations.html">Destinations</a></li>
+        <li><a class="site-nav__link nav--active" href="info.html" aria-current="page">Explore</a></li>
+        <li><a class="site-nav__link" href="contact.html">Book a Trip</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-content">
+
+    <!-- Page Banner -->
+    <section class="page-banner" aria-label="Page banner">
+      <div class="page-banner__overlay"></div>
+      <div class="page-banner__content">
+        <p class="hero__eyebrow" id="info-eyebrow">Scotland's Capital</p>
+        <h1 class="page-banner__heading">Edinburgh</h1>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="breadcrumbs__inner anim-scroll">
+        <a href="index.html" class="breadcrumbs__link">Home</a>
+        <span class="breadcrumbs__separator">/</span>
+        <a href="destinations.html" class="breadcrumbs__link">Destinations</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__current">Explore</span>
+      </div>
+    </nav>
+
+    <section class="info-section content-section">
+      <div class="content-section__inner">
+
+        <h1 class="info-section__title anim-scroll" id="info-header">Edinburgh</h1>
+        <p class="info-section__subtitle anim-scroll" id="info-subtitle">Discover Britain's incredible destinations one fact at a time. Click the button below to reveal each piece of the story.</p>
+
+        <!-- Progress bar -->
+        <div class="progress-bar" aria-label="Reading progress">
+          <div class="progress-bar__fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-flex">
+          <p class="progress-label" id="progress-label" aria-live="polite">Fact 0 of 6</p>
+          <p class="destination-label" id="dest-label"></p>
+        </div>
+
+        <!-- Fact cards — ALL hidden on load, revealed one by one via jQuery -->
+        <div class="facts-container" id="facts-container">
+
+          <div class="fact-card" id="fact-1" style="display:none;" aria-hidden="true">
+            <span class="fact-card__number">Fact 1 of 6</span>
+            <h2 class="fact-card__title" id="fact-1-title">The City</h2>
+            <p class="fact-card__body" id="fact-1-body">Edinburgh is the capital of Scotland with a population of around 500,000. It sits on ancient volcanic rock and is one of the most visited cities in the UK.</p>
+          </div>
+
+          <div class="fact-card" id="fact-2" style="display:none;" aria-hidden="true">
+            <span class="fact-card__number">Fact 2 of 6</span>
+            <h2 class="fact-card__title" id="fact-2-title">Edinburgh Castle</h2>
+            <p class="fact-card__body" id="fact-2-body">The castle sits atop Castle Rock, a volcanic plug that has been a fortress for over 3,000 years. It houses the Scottish Crown Jewels.</p>
+          </div>
+
+          <div class="fact-card" id="fact-3" style="display:none;" aria-hidden="true">
+            <span class="fact-card__number">Fact 3 of 6</span>
+            <h2 class="fact-card__title" id="fact-3-title">The Fringe</h2>
+            <p class="fact-card__body" id="fact-3-body">Every August, Edinburgh hosts the world's largest arts festival — The Edinburgh Festival Fringe — with thousands of shows across hundreds of venues.</p>
+          </div>
+
+          <div class="fact-card" id="fact-4" style="display:none;" aria-hidden="true">
+            <span class="fact-card__number">Fact 4 of 6</span>
+            <h2 class="fact-card__title" id="fact-4-title">The Royal Mile</h2>
+            <p class="fact-card__body" id="fact-4-body">This historic street connects Edinburgh Castle to the Palace of Holyroodhouse, lined with closes, shops, and centuries of history.</p>
+          </div>
+
+          <div class="fact-card" id="fact-5" style="display:none;" aria-hidden="true">
+            <span class="fact-card__number">Fact 5 of 6</span>
+            <h2 class="fact-card__title" id="fact-5-title">Getting There</h2>
+            <p class="fact-card__body" id="fact-5-body">Direct trains from London King's Cross take around 4.5 hours. Budget flights operate from most major UK airports.</p>
+          </div>
+
+          <div class="fact-card" id="fact-6" style="display:none;" aria-hidden="true">
+            <span class="fact-card__number">Fact 6 of 6</span>
+            <h2 class="fact-card__title" id="fact-6-title">Best Time to Visit</h2>
+            <p class="fact-card__body" id="fact-6-body">May to September for warm weather and long days. August for The Fringe. December for Christmas markets.</p>
+          </div>
+
+        </div>
+
+        <!-- Summary — hidden until all facts revealed -->
+        <div class="facts-summary" id="facts-summary" style="display:none;" aria-live="polite">
+          <h2 id="summary-title">You have explored all of Edinburgh!</h2>
+          <p>Ready to plan your visit?</p>
+          <a href="contact.html" class="btn btn--primary">Book a Trip</a>
+        </div>
+
+        <!-- Controls -->
+        <div class="facts-controls">
+          <button class="btn btn--primary" id="btn-next" aria-label="Show the next Edinburgh fact">Show Next Fact</button>
+          <button class="btn btn--secondary" id="btn-reset" aria-label="Reset all facts and start over">Start Over</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+      <div class="content-section__inner">
+        <p class="section-eyebrow anim-scroll" style="text-align: center;">Commitment</p>
+        <h2 class="section-heading anim-scroll" style="text-align: center;">Why UK Escapes?</h2>
+        <div class="why-us__grid">
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Expertly Curated</h3>
+            <p class="why-us-item__body">Every destination is hand-picked by our local experts to ensure an authentic British experience.</p>
+          </div>
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Premium Support</h3>
+            <p class="why-us-item__body">From booking to your return home, our dedicated team is available 24/7 to assist you.</p>
+          </div>
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Verified Quality</h3>
+            <p class="why-us-item__body">We partner directly with local providers to ensure the highest standards of safety and comfort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 UK Escapes &nbsp;|&nbsp;
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="info.html">Explore</a>
+      <a href="contact.html">Book a Trip</a>
+    </p>
+  </footer>
+
+  <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-progress"></div></div>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/reveal.js"></script>
+
+</body>
+</html>
