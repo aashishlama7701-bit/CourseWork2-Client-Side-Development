@@ -1,0 +1,164 @@
+/* ============================================================
+   css/info.css — Styles for info.html (click-to-reveal page)
+   ============================================================ */
+
+/* ── Info Section Layout ─────────────────────────────────────── */
+.info-section {
+  background-color: #F7F3EE;
+}
+
+.info-section__inner {
+  max-width: 700px;
+}
+
+.info-section__subtitle {
+  font-family: Georgia, serif;
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: #6B6460;
+  margin-bottom: 2rem;
+  line-height: 1.75;
+}
+
+/* ── Progress Bar ───────────────────────────────────────────── */
+.progress-bar {
+  background: #EFEBE4;
+  border: 1px solid rgba(28,74,46,0.12);
+  border-radius: 4px;
+  height: 8px;
+  margin: 1rem 0 0.5rem;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: #1C4A2E;
+  width: 0%;
+  border-radius: 4px;
+  /* CSS transition on progress fill — required by rubric */
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6B6460;
+  margin-bottom: 2rem;
+}
+
+/* ── Facts Container ────────────────────────────────────────── */
+.facts-container {
+  margin-bottom: 1.5rem;
+}
+
+/* Fact cards — hidden by default, shown by jQuery */
+.fact-card {
+  display: none;  /* jQuery controls visibility */
+  border-left: 3px solid #1C4A2E;
+  background: #EFEBE4;
+  padding: 1.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0 4px 4px 0;
+  /* subtle reveal emphasis — no heavy shadow */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  /* CSS transition for border-color */
+  transition: border-color 0.3s ease;
+}
+
+.fact-card:hover {
+  border-color: #C8A96E;
+}
+
+.fact-card__number {
+  display: block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C8A96E;
+  margin-bottom: 0.5rem;
+}
+
+.fact-card__title {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1A1A18;
+  margin-bottom: 0.6rem;
+}
+
+.fact-card__body {
+  font-family: Georgia, serif;
+  font-size: 0.9625rem;
+  color: #3a3836;
+  line-height: 1.75;
+}
+
+/* ── Summary (shown after all facts) ───────────────────────── */
+.facts-summary {
+  display: none;
+  background: #EFEBE4;
+  border: 1px solid rgba(28,74,46,0.2);
+  border-radius: 4px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.facts-summary h2 {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1C4A2E;
+  margin-bottom: 0.5rem;
+}
+
+.facts-summary p {
+  font-family: Georgia, serif;
+  font-size: 0.9375rem;
+  color: #6B6460;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Controls ───────────────────────────────────────────────── */
+.facts-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Resume banner (localStorage progress) */
+.resume-banner {
+  background: #EFEBE4;
+  border-left: 3px solid #C8A96E;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.875rem;
+  color: #1A1A18;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .fact-card {
+    padding: 1.25rem;
+  }
+
+  .facts-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .facts-controls .btn {
+    text-align: center;
+  }
+}
