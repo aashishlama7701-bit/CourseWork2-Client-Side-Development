@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Trip — UK Escapes</title>
+  <meta name="description" content="Submit your UK travel enquiry with UK Escapes. Fill in your name, travel date, destination, and guest numbers and we'll be in touch.">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="site-header__logo" href="index.html">UK Escapes</a>
+    <div class="site-header__datetime" id="datetime-display" aria-live="polite"></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul class="site-nav__list" role="list">
+        <li><a class="site-nav__link" href="index.html">Home</a></li>
+        <li><a class="site-nav__link" href="destinations.html">Destinations</a></li>
+        <li><a class="site-nav__link" href="info.html">Explore</a></li>
+        <li><a class="site-nav__link nav--active" href="contact.html" aria-current="page">Book a Trip</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-content">
+
+    <!-- Page Banner -->
+    <section class="page-banner" aria-label="Page banner">
+      <div class="page-banner__overlay"></div>
+      <div class="page-banner__content">
+        <p class="hero__eyebrow">Ready to Travel?</p>
+        <h1 class="page-banner__heading">Book a Trip</h1>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <div class="breadcrumbs__inner anim-scroll">
+        <a href="index.html" class="breadcrumbs__link">Home</a>
+        <span class="breadcrumbs__separator">/</span>
+        <span class="breadcrumbs__current">Book a Trip</span>
+      </div>
+    </nav>
+
+    <section class="form-section-wrap content-section" aria-labelledby="contact-heading">
+      <div class="content-section__inner">
+
+        <p class="section-eyebrow anim-scroll">Enquiries</p>
+        <h2 class="section-heading anim-scroll" id="contact-heading">Make an Enquiry</h2>
+        <p class="section-intro anim-scroll">Complete the form below and a member of our team will be in touch within 24 hours to confirm availability and pricing.</p>
+
+        <!-- Draft saved banner -->
+        <div class="draft-banner" id="draft-banner" style="display:none;" role="status" aria-live="polite">
+          <div class="banner-inner" id="draft-banner-inner">
+            Your previous draft has been restored. <button class="btn-link" id="btn-clear-draft">Clear draft</button>
+          </div>
+        </div>
+
+        <div class="form-section anim-scroll">
+
+          <form id="booking-form" novalidate aria-label="Booking enquiry form">
+
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label" for="name">
+                Full Name <span class="required-marker" aria-hidden="true">*</span>
+              </label>
+              <input
+                class="form-input"
+                type="text"
+                id="name"
+                name="name"
+                aria-required="true"
+                aria-describedby="name-error"
+                autocomplete="name"
+                placeholder="e.g. Jane Smith">
+              <span class="field-error" id="name-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label class="form-label" for="email">
+                Email Address <span class="required-marker" aria-hidden="true">*</span>
+              </label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                aria-required="true"
+                aria-describedby="email-error"
+                autocomplete="email"
+                placeholder="e.g. jane@example.com">
+              <span class="field-error" id="email-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label class="form-label" for="phone">
+                Phone Number <span class="required-marker" aria-hidden="true">*</span>
+              </label>
+              <input
+                class="form-input"
+                type="tel"
+                id="phone"
+                name="phone"
+                aria-required="true"
+                aria-describedby="phone-error"
+                autocomplete="tel"
+                placeholder="e.g. 07700 900000">
+              <span class="field-error" id="phone-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Date Selection -->
+            <div class="form-row">
+              <div class="form-group flex-1">
+                <label class="form-label" for="arrival-date">
+                  Arrival Date <span class="required-marker" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="arrival-date"
+                  name="arrival-date"
+                  aria-required="true"
+                  aria-describedby="arrival-date-error">
+                <span class="field-error" id="arrival-date-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group flex-1">
+                <label class="form-label" for="departure-date">
+                  Departure Date <span class="required-marker" aria-hidden="true">*</span>
+                </label>
+                <input
+                  class="form-input"
+                  type="date"
+                  id="departure-date"
+                  name="departure-date"
+                  aria-required="true"
+                  aria-describedby="departure-date-error">
+                <span class="field-error" id="departure-date-error" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <!-- Number of Guests -->
+            <div class="form-group">
+              <label class="form-label" for="guests">
+                Number of Guests <span class="required-marker" aria-hidden="true">*</span>
+              </label>
+              <input
+                class="form-input"
+                type="number"
+                id="guests"
+                name="guests"
+                min="1"
+                max="20"
+                aria-required="true"
+                aria-describedby="guests-error"
+                placeholder="1–20">
+              <span class="field-error" id="guests-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Preferred Destination -->
+            <div class="form-group">
+              <label class="form-label" for="destination">
+                Preferred Destination <span class="required-marker" aria-hidden="true">*</span>
+              </label>
+              <select class="form-input" id="destination" name="destination"
+                      aria-required="true" aria-describedby="destination-error">
+                <option value="">-- Select a destination --</option>
+                <option value="Edinburgh" data-price="120">Edinburgh (£120/night)</option>
+                <option value="London" data-price="180">London (£180/night)</option>
+                <option value="Lake District" data-price="140">Lake District (£140/night)</option>
+                <option value="Bath" data-price="150">Bath (£150/night)</option>
+              </select>
+              <span class="field-error" id="destination-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <!-- Private Guide Option -->
+            <div class="form-group form-group--checkbox">
+              <input type="checkbox" id="private-guide" name="private-guide">
+              <label for="private-guide">
+                Add Professional Private Guide (+£150 total)
+              </label>
+            </div>
+
+            <!-- Price Summary Card -->
+            <div id="price-card" class="price-summary anim-scroll">
+              <div class="price-summary__header">
+                <h3>Estimated Summary</h3>
+                <span class="price-status" id="price-status">Enter details to see price</span>
+              </div>
+              <div class="price-summary__body">
+                <div class="price-row">
+                  <span>Duration</span>
+                  <span id="price-duration">0 Nights</span>
+                </div>
+                <div class="price-row">
+                  <span>Guests</span>
+                  <span id="price-guests-count">0</span>
+                </div>
+                <div class="price-row total-row">
+                  <span>Estimated Total</span>
+                  <span id="price-total">£0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label class="form-label" for="message">Message (optional)</label>
+              <textarea class="form-input" id="message" name="message"
+                        rows="4" maxlength="500"
+                        aria-describedby="message-error char-count"
+                        placeholder="Any special requirements, questions, or preferences..."></textarea>
+              <span class="field-error" id="message-error" role="alert" aria-live="polite"></span>
+              <span class="char-counter" id="char-count" aria-live="polite">0 / 500 characters</span>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="form-group form-group--checkbox">
+              <input type="checkbox" id="terms" name="terms"
+                     aria-required="true" aria-describedby="terms-error">
+              <label for="terms">
+                I agree to the <a href="#">Terms and Conditions</a>
+                <span class="required-marker" aria-hidden="true">*</span>
+              </label>
+              <span class="field-error" id="terms-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <p class="required-note">
+              <span aria-hidden="true">*</span> Required fields
+            </p>
+
+            <button type="submit" class="btn btn--primary btn--submit">Submit Enquiry</button>
+
+          </form>
+
+          <!-- Hidden on load. Shown after successful validation. No page reload. -->
+          <div id="booking-summary" class="booking-summary" style="display:none;"
+               aria-live="polite" aria-atomic="true" role="region" aria-label="Booking confirmation">
+            <div class="booking-summary__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h2>Enquiry Received!</h2>
+            <p>Thank you, <strong id="summary-name"></strong>. We will be in touch at <strong id="summary-email"></strong>.</p>
+            <ul class="summary-list">
+              <li><strong>Reference:</strong> <span id="summary-ref"></span></li>
+              <li><strong>Destination:</strong> <span id="summary-destination"></span></li>
+              <li><strong>Travel Date:</strong> <span id="summary-date"></span></li>
+              <li><strong>Guests:</strong> <span id="summary-guests"></span></li>
+            </ul>
+            <button class="btn btn--secondary" id="btn-start-over">Submit Another Enquiry</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+      <div class="content-section__inner">
+        <p class="section-eyebrow anim-scroll" style="text-align: center;">Commitment</p>
+        <h2 class="section-heading anim-scroll" style="text-align: center;">Why UK Escapes?</h2>
+        <div class="why-us__grid">
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Expertly Curated</h3>
+            <p class="why-us-item__body">Every destination is hand-picked by our local experts to ensure an authentic British experience.</p>
+          </div>
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Premium Support</h3>
+            <p class="why-us-item__body">From booking to your return home, our dedicated team is available 24/7 to assist you.</p>
+          </div>
+          <div class="why-us-item anim-scroll">
+            <div class="why-us-item__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 class="why-us-item__title">Verified Quality</h3>
+            <p class="why-us-item__body">We partner directly with local providers to ensure the highest standards of safety and comfort.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 UK Escapes &nbsp;|&nbsp;
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="info.html">Explore</a>
+      <a href="contact.html">Book a Trip</a>
+    </p>
+  </footer>
+
+  <div class="scroll-progress-container"><div class="scroll-progress-bar" id="scroll-progress"></div></div>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/validate.js"></script>
+
+</body>
+</html>
